@@ -23,7 +23,8 @@ A low-cost IoT security system that protects valuables on open display. A finger
 | Buzzer + BC547 transistor | Local alarm |
 | LM2596 buck converter | Power regulation |
 
-The full circuit schematic is in `docs/schematic.png`.
+The full circuit schematic is in `<img width="2940" height="1815" alt="myFYPloadSensPic_bb" src="https://github.com/user-attachments/assets/bc40a8bd-0650-4ae5-8a2f-93be0884254b" />
+`.
 
 ## How it works
 ![Flowchart](<img width="1024" height="1536" alt="file_00000000cab07243a14765dc35e68e2a" src="https://github.com/user-attachments/assets/aba6b621-4e87-4d1c-8344-ce6e1849c638" />
