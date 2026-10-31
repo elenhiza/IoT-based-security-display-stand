@@ -1,2 +1,3 @@
 # IoT-based-security-display-stand
 Fingerprint and weight-sensing security for displayed assets, built on ESP32-S3 with Telegram alerts.
+This project is a low-cost IoT security system that protects valuables on open display. A fingerprint sensor identifies authorised users, a load cell monitors the item’s weight, and a finite state machine links the two. If an unauthorised weight change occurs, the system sounds an alarm, captures a photo, and sends it with a timestamped weight report to the owner’s Telegram. In testing it achieved 0.0% false acceptance, 16.0% false rejection, a 20 g detection floor, and a mean alert time of 12.4 seconds.
