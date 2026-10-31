@@ -15,7 +15,7 @@ A low-cost IoT security system that protects valuables on open display. A finger
 
 ## Hardware
 | Component | Purpose |
-
+|---|---|
 | ESP32-S3 CAM (N16R8) | Main controller, camera, Wi-Fi |
 | AS608 fingerprint sensor | Biometric authentication (UART2) |
 | HX711 + 20 kg load cell | Weight sensing |
@@ -23,8 +23,8 @@ A low-cost IoT security system that protects valuables on open display. A finger
 | Buzzer + BC547 transistor | Local alarm |
 | LM2596 buck converter | Power regulation |
 
-The full circuit schematic is in `<img width="2940" height="1815" alt="myFYPloadSensPic_bb" src="https://github.com/user-attachments/assets/bc40a8bd-0650-4ae5-8a2f-93be0884254b" />
-`.
+The full circuit schematic is in (<img width="2940" height="1815" alt="myFYPloadSensPic_bb" src="https://github.com/user-attachments/assets/bc40a8bd-0650-4ae5-8a2f-93be0884254b" />
+).
 
 ## How it works
 ![Flowchart](<img width="1024" height="1536" alt="file_00000000cab07243a14765dc35e68e2a" src="https://github.com/user-attachments/assets/aba6b621-4e87-4d1c-8344-ce6e1849c638" />
@@ -36,17 +36,18 @@ The full circuit schematic is in `<img width="2940" height="1815" alt="myFYPload
 4. In the ALARM state the buzzer sounds, a photo is captured, and a Telegram alert is sent.
 
 ## Setup
-1. Install the Arduino IDE with ESP32 board support.
-2. Install the required libraries (Adafruit fingerprint library, HX711 library, LiquidCrystal_I2C).
-3. Create a Telegram bot with BotFather and note the bot token and your chat ID.
-4. Copy `secrets.example.h` to `secrets.h` and fill in your own Wi-Fi name, Wi-Fi password, bot token, and chat ID.
-5. Select the ESP32-S3 board, upload the sketch in `firmware/`, and enrol fingerprints.
+1. Install the Arduino IDE with ESP32 board support (ESP32-S3).
+2. Install these libraries: HX711_ADC, Adafruit Fingerprint Sensor Library, LiquidCrystal_I2C, UniversalTelegramBot, and ArduinoJson (required by UniversalTelegramBot).
+3. Create a Telegram bot with @BotFather and note the bot token and your chat ID.
+4. Open `FinalSmartSecurityStandProject.ino` and fill in `ssid`, `password`, `botToken` and `chatID` under "WIFI & CLOUD CONFIGURATION".
+5. Calibrate the load cell with the HX711_ADC calibration example and set `calibrationValue`.
+6. Select the ESP32-S3 board, upload the sketch, and enrol your fingerprints.
 
-**Never commit your real `secrets.h`.**
+**Never commit your real Wi-Fi password or bot token.**
 
 ## Test results
 | Metric | Result |
-
+|---|---|
 | False Acceptance Rate (100 trials) | 0.0% |
 | False Rejection Rate (100 trials) | 16.0% |
 | Weight detection floor | 20 g |
